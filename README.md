@@ -25,7 +25,7 @@
 <details open>
   <summary>吉林省松材线虫病空间分布</summary>
   <div align="center">
-    <img src="./assets/jilin_distribution.jpg" width="80%" alt="吉林省病害分布">
+    <img src="static/FramSeg.png" width="80%" alt="吉林省病害分布">
     <p>左：2023年实测分布 | 右：本模型预测分布（红框为高风险区）</p>
   </div>
 </details>
