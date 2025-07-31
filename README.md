@@ -30,14 +30,18 @@
     <img src="static/self-built PWD.png" width="80%">
   </div>
 </details>
-## :computer: 环境配置
+
+## :computer: Installation
 <details open>
   <summary>依赖安装步骤</summary>
   
-  1. **克隆仓库并创建环境**
+  1. **Clone this project and create a conda environment:**
      ```bash
-     git clone https://github.com/你的用户名/你的仓库名.git
-     cd 你的仓库名
+     git clone https://github.com/TechJots-Liu/CF-SCSNet.git
+     cd CF-SCSNet
      
-     conda create -n pwdm python=3.10
-     conda activate pwdm
+     conda create -n cf_scsnet python=3.10.9
+     conda activate cf_scsnet
+  2. **Install pytorch and torchvision matching your CUDA version:**
+     ```bash
+     pip install torch==1.13.1+cu117 torchvision==0.14.1+cu117 torchaudio==0.13.1 --extra-index-url https://download.pytorch.org/whl/cu117
