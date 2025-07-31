@@ -1,4 +1,4 @@
-# Pine Wilt Disease Monitoring in Jilin Province: A Remote Sensing-Based Detection Framework
+# Accurate segmentation of pine wilt disease in UAV remote sensing imagery: From dataset construction to vision-language segmentation framework with coarse-fine labels
 https://github.com/你的用户名/你的仓库名/assets/xxx/xxx.mp4  <!-- 可插入监测流程演示视频 -->
 
 ## :newspaper: 研究进展
