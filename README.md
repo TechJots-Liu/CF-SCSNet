@@ -10,8 +10,11 @@
   - Text-driven semantically coupled segmentation network (CF-SCSNet)
  
 ## :card_file_box:Datasets
-![overview](static/datasets.png)
-
+<div align="center">
+    <img src="static/datasets.png" width="80%">
+    <p>左：2023年实测分布 | 右：本模型预测分布（红框为高风险区）</p>
+</div>
+  
 ## :bar_chart: Model test dataset
 | **Dataset**         | Dataset download |
 | :------------------ | :--------------------- |
