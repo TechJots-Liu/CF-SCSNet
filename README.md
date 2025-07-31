@@ -8,8 +8,11 @@
   - Task-specific dataset with aligned cross-modal annotations
   - Coarse-fine dual-granularity labeling framework for imbalanced small targets
   - Text-driven semantically coupled segmentation network (CF-SCSNet)
+ 
+## :card_file_box:Datasets
 ![overview](static/datasets.png)
-## :bar_chart: 模型性能对比
+
+## :bar_chart: Model performance comparison
 | **数据集**         | **方法**               | **准确率(%)↑** | **召回率(%)↑** | **F1-score↑** | 模型下载 |
 | :------------------ | :--------------------- | :------------- | :------------- | :------------ | :------- |
 | **吉林省东部林区** | 改进U-Net++（本文）    | **94.2**       | **91.8**       | **92.3**      | [链接]   |
@@ -17,7 +20,7 @@
 |                     | 原始U-Net              | 89.7           | 86.5           | 88.1          | -        |
 | **公开数据集（Xiong et al. 2023）** | 改进U-Net++（本文） | 90.5           | 88.7           | 89.6          | [链接]   |
 
-## :map: 监测结果可视化
+## :map: Visualization
 <details open>
   <summary>吉林省松材线虫病空间分布</summary>
   <div align="center">
