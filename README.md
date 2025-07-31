@@ -1,5 +1,5 @@
 # Accurate segmentation of pine wilt disease in UAV remote sensing imagery: From dataset construction to vision-language segmentation framework with coarse-fine labels
-https://github.com/TechJots-Liu/CF-SCSNet/blob/main/static/surveyRegion.png
+![overview](static/surveyRegion.png)
 https://github.com/TechJots-Liu/CF-SCSNet/blob/main/static/datasetes.png
 ## :newspaper:R Research progress
 - **[2025/04/21]** 完成吉林省2024年松材线虫病遥感监测数据集构建，包含10万+样点数据 :chart_with_upwards_trend:
