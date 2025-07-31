@@ -23,25 +23,25 @@
 
 ## :fallen_leaf: Visualization
 <details open>
-  <summary>吉林省松材线虫病空间分布</summary>
+  <summary>self-built PWD</summary>
   <div align="center">
-    <img src="static/Framseg.png" width="80%" alt="吉林省病害分布">
+    <img src="static/self-built PWD.png" width="80%">
     <p>左：2023年实测分布 | 右：本模型预测分布（红框为高风险区）</p>
   </div>
 </details>
 
 <details>
-  <summary>病害特征对比</summary>
+  <summary>Framseg</summary>
   <div align="center">
-    <img src="./assets/symptom_comparison.jpg" width="80%" alt="健康与患病松树特征">
-    <p>上：哨兵-2影像光谱曲线 | 下：无人机激光雷达冠层结构差异</p>
+    <img src="static/Framseg.png" width="80%">
+    <p>左：2023年实测分布 | 右：本模型预测分布（红框为高风险区）</p>
   </div>
 </details>
 
 <details>
-  <summary>风险等级区划</summary>
+  <summary>RRSIS</summary>
   <div align="center">
-    <img src="./assets/risk_zones.jpg" width="80%" alt="吉林省风险区划">
+    <img src="./assets/risk_zones.jpg" width="80%">
     <p>基于海拔、温度、林分密度的综合风险评估（红→黄→绿：高→中→低风险）</p>
   </div>
 </details>
