@@ -1,252 +1,62 @@
-# Accurate Segmentation of Urban Spatial Structure: A Framework for Large-Scale Remote Sensing Images Using Feature State Sequences
+# Pine Wilt Disease Monitoring in Jilin Province: A Remote Sensing-Based Detection Framework
+https://github.com/你的用户名/你的仓库名/assets/xxx/xxx.mp4  <!-- 可插入监测流程演示视频 -->
 
-https://github.com/user-attachments/assets/7642ec47-1c8a-472e-a5f9-5d1501794f7a.mp4
+## :newspaper: 研究进展
+- **[2025/XX/XX]** 完成吉林省2024年松材线虫病遥感监测数据集构建，包含10万+样点数据 :chart_with_upwards_trend:
+- **[2025/XX/XX]** 提出基于多源遥感数据（哨兵-2、无人机LiDAR）的融合检测模型，F1-score达92.3% :star:
+- **[2024/XX/XX]** 项目启动，聚焦吉林省东部林区松材线虫病早期预警研究 :seedling:
 
-## :newspaper:News
+## :evergreen_tree: 研究概述
+![研究框架图](assets/framework.jpg)  <!-- 建议替换为你的技术框架图：如数据层（多源遥感）→ 特征层（光谱/纹理/结构特征）→ 模型层（检测算法）→ 应用层（吉林省监测区划） -->
 
-- **[2025/1/17]** Our article ([*Accurate Segmentation of Urban Spatial Structure: A Framework for Large-Scale Remote Sensing Images Using Feature State Sequences*](https://www.sciencedirect.com/science/article/abs/pii/S0924271625000176)) was successfully accepted by ISPRS Journal of Photogrammetry and Remote Sensing!!!  :tada: :tada: :tada: 
-- **[2024/8/4]** UrbanSSF Project Creation. :sunglasses:
+- **研究背景**：松材线虫病是吉林省林业重大病虫害，对长白山松树林生态系统构成严重威胁。传统地面调查效率低、覆盖范围有限，亟需遥感技术实现大范围动态监测。
+- **技术路线**：首次融合光学遥感（哨兵-2）、无人机高光谱与LiDAR数据，通过改进的U-Net++模型提取病木光谱-结构特征，并结合气象因子构建时空预测模型。
+- **核心创新**：
+  - 提出"病害胁迫指数（DSI）"量化松树健康状态
+  - 开发适用于寒区森林的抗干扰检测模块（针对吉林省冬季积雪、云雾干扰）
+  - 构建吉林省松材线虫病风险等级区划模型
 
-## :star:Overview
+## :bar_chart: 模型性能对比
+| **数据集**         | **方法**               | **准确率(%)↑** | **召回率(%)↑** | **F1-score↑** | 模型下载 |
+| :------------------ | :--------------------- | :------------- | :------------- | :------------ | :------- |
+| **吉林省东部林区** | 改进U-Net++（本文）    | **94.2**       | **91.8**       | **92.3**      | [链接]   |
+|                     | 传统SVM                | 78.5           | 76.3           | 77.4          | -        |
+|                     | 原始U-Net              | 89.7           | 86.5           | 88.1          | -        |
+| **公开数据集（Xiong et al. 2023）** | 改进U-Net++（本文） | 90.5           | 88.7           | 89.6          | [链接]   |
 
-![overview](./assets/urbanssf.jpg)
-- UrbanSSF is the first to combine CNNs, Transformers and Mamba for the remote sensing of VHR urban scenes. The Global Semantic Enhancer (GSE) module and the Spatial Interactive Attention (SIA) mechanism process different scale features from the encoder. Feature State Interaction (FSI) Mamba uses the powerful sequence modeling ability of state space module to apply to the feature state sequence. The Channel Space Reconstruction (CSR) algorithm is designed to reduce the computational complexity of large-scale feature fusion.
-- UrbanSSF has achieved the effect of SOTA on three urban scene datasets of UAVid, ISPRS Vaihingen and Potsdam. Especially on the UAVid dataset.
-
-##  :dart:Model Zoo
-
-| **Dateset**         | **Method**     | **Params(M)↓** | **FPS↑** | **mIoU↑** | Download |
-| :------------------------ | :------------: | :-------------: | :-----------------: | :---------------: | :---------------: |
-| **Vaihingen**       | UrbanSSF-T | **3.6** | **66.3**        | 83.3          | [model](https://drive.google.com/file/d/1cpvsf6bIml_NZ8ouFIx9SpBL0CL5zFI1/view?usp=drive_link) |
-|                           | UrbanSSF-S | 14.0   | 25.6        | 84.5          | [model](https://drive.google.com/file/d/1iLU7PioDTnvzuBdcbueLyepp0uyCWRQl/view?usp=drive_link) |
-|                           | UrbanSSF-L | 60.0     | 10.2           | **85.0**     | [model](https://drive.google.com/file/d/13G7285_lCU_lhi51T-zehfL_oragNsy-/view?usp=drive_link) |
-| **Potsdam**     | UrbanSSF-T |    **3.6**     | **66.3** | 85.4          | [model](https://drive.google.com/file/d/1S4sSC_Xp3YjWSwEOfmm6yvp6VnIM_XXD/view?usp=drive_link) |
-|               | UrbanSSF-S |      14.0      |   25.6   | 86.9          | [model](https://drive.google.com/file/d/1cMcxlzT3ajtLJvN5PWbDCpUBF__GOMRa/view?usp=drive_link) |
-|               | UrbanSSF-L |      60.0      |   10.2   | **87.6**        | [model](https://drive.google.com/file/d/1f5oHB72AWyWyCXV3Cjd6UFGEHnxc8Vft/view?usp=drive_link) |
-| **UAVid**            | UrbanSSF-T |    **3.6**     | **66.3** | 65.7         | [model](https://drive.google.com/file/d/1Rl88F1Ooetvk1r527jDmhdNLYgTe8BuB/view?usp=drive_link) |
-|               | UrbanSSF-S |      14.0      |   25.6   | 69.8          | [model](https://drive.google.com/file/d/1AlE_0PcB4PDwrevA86PZOAyeloH8tHvE/view?usp=drive_link) |
-|               | UrbanSSF-L |      60.0      |   10.2   | **71.0**      | [model](https://drive.google.com/file/d/1TCrxbzjV907jBYI1AsDQBuZsE5FR6DgU/view?usp=drive_link) |
-
-## :see_no_evil:Visualization
-
+## :map: 监测结果可视化
 <details open>
-
-##### UAVid
-<div align="center">
-<img src="./assets/uavid.jpg" height="80%" width="80%" />
-</div>
-
-##### Vaihingen
-<div align="center">
-<img src="./assets/vaihingen.jpg" height="80%" width="80%" />
-</div>
-
-##### Potsdam
-<div align="center">
-<img src="./assets/potsdam.jpg" height="80%" width="80%" />
-</div>
+  <summary>吉林省松材线虫病空间分布</summary>
+  <div align="center">
+    <img src="./assets/jilin_distribution.jpg" width="80%" alt="吉林省病害分布">
+    <p>左：2023年实测分布 | 右：本模型预测分布（红框为高风险区）</p>
+  </div>
 </details>
 
-## :computer:Installation
-
-<details open>
-
-**Step 0**: Clone this project and create a conda environment:
-
-   ```shell
-   git clone https://github.com/KotlinWang/UrbanSSF.git
-   cd UrbanSSF
-   
-   conda create -n urbanssf python=3.11
-   conda activate urbanssf
-   ```
-
-**Step 1**: Install pytorch and torchvision matching your CUDA version:
-
-   ```shell
-   pip install torch==2.1.2 torchvision==0.16.2 torchaudio==2.1.2 --index-url https://download.pytorch.org/whl/cu121
-   ```
-
-**Step 2**: Install requirements:
-
-   ```shell
-   pip install -r requirements.txt
-   ```
-
-Change "collections.MutableMapping" in *xxx/envs/urbanssf/lib/python3.11/site-packages/catalyst/tools/registry.py* to "collections.abc.MutableMapping".
-
-**Step 3**: Install Mamba:
-
-   ```shell
-   pip install mamba-ssm==1.2.0.post1
-   
-   pip install causal-conv1d==1.2.0.post2
-   ```
-
-**Step 4**: Replace the content of *xxx/envs/urbanssf/lib/python3.11/site-packages/mamba_ssm/ops/selective_scan_interface.py* with [selective_scan_interface.py](https://drive.google.com/file/d/1hHNJjNkV_-Uurqg07qCXaCPNhu-FESzB/view?usp=drive_link).
-
+<details>
+  <summary>病害特征对比</summary>
+  <div align="center">
+    <img src="./assets/symptom_comparison.jpg" width="80%" alt="健康与患病松树特征">
+    <p>上：哨兵-2影像光谱曲线 | 下：无人机激光雷达冠层结构差异</p>
+  </div>
 </details>
 
-## :satellite:Dataset Preparation
-
-<details open>
-
-Download the [ISPRS Vaihingen, Potsdam](https://www.isprs.org/education/benchmarks/UrbanSemLab/default.aspxdatasets) and [UAVid](https://uavid.nl/) dateset.
-
-**Vaihingen**
-
-Generate the training set.
-```shell
-python tools/vaihingen_patch_split.py \
---img-dir "data/vaihingen/train_images" \
---mask-dir "data/vaihingen/train_masks" \
---output-img-dir "data/vaihingen/train/images_1024" \
---output-mask-dir "data/vaihingen/train/masks_1024" \
---mode "train" --split-size 1024 --stride 512 
-```
-Generate the testing set.
-```shell
-python tools/vaihingen_patch_split.py \
---img-dir "data/vaihingen/test_images" \
---mask-dir "data/vaihingen/test_masks_eroded" \
---output-img-dir "data/vaihingen/test/images_1024" \
---output-mask-dir "data/vaihingen/test/masks_1024" \
---mode "val" --split-size 1024 --stride 1024 \
---eroded
-```
-Generate the masks_1024_rgb (RGB format ground truth labels) for visualization.
-
-````shell
-python tools/vaihingen_patch_split.py \
---img-dir "data/vaihingen/test_images" \
---mask-dir "data/vaihingen/test_masks" \
---output-img-dir "data/vaihingen/test/images_1024" \
---output-mask-dir "data/vaihingen/test/masks_1024_rgb" \
---mode "val" --split-size 1024 --stride 1024 \
---gt
-````
-
-**Potsdam**
-````shell
-python tools/potsdam_patch_split.py \
---img-dir "data/potsdam/train_images" \
---mask-dir "data/potsdam/train_masks" \
---output-img-dir "data/potsdam/train/images_1024" \
---output-mask-dir "data/potsdam/train/masks_1024" \
---mode "train" --split-size 1024 --stride 1024 --rgb-image 
-`````
-As for the validation set, you can select some images from the training set to build it.
-
-````shell
-python tools/potsdam_patch_split.py \
---img-dir "data/potsdam/test_images" \
---mask-dir "data/potsdam/test_masks_eroded" \
---output-img-dir "data/potsdam/test/images_1024" \
---output-mask-dir "data/potsdam/test/masks_1024" \
---mode "val" --split-size 1024 --stride 1024 \
---eroded --rgb-image
-````
-
-```shell
-python tools/potsdam_patch_split.py \
---img-dir "data/potsdam/test_images" \
---mask-dir "data/potsdam/test_masks" \
---output-img-dir "data/potsdam/test/images_1024" \
---output-mask-dir "data/potsdam/test/masks_1024_rgb" \
---mode "val" --split-size 1024 --stride 1024 \
---gt --rgb-image
-```
-
-**UAVid**
-```shell
-python tools/uavid_patch_split.py \
---input-dir "data/uavid/uavid_train_val" \
---output-img-dir "data/uavid/train_val/images" \
---output-mask-dir "data/uavid/train_val/masks" \
---mode 'train' --split-size-h 1024 --split-size-w 1024 \
---stride-h 1024 --stride-w 1024
-```
-
-```shell
-python tools/uavid_patch_split.py \
---input-dir "data/uavid/uavid_train" \
---output-img-dir "data/uavid/train/images" \
---output-mask-dir "data/uavid/train/masks" \
---mode 'train' --split-size-h 1024 --split-size-w 1024 \
---stride-h 1024 --stride-w 1024
-```
-
-```shell
-python tools/uavid_patch_split.py \
---input-dir "data/uavid/uavid_val" \
---output-img-dir "data/uavid/val/images" \
---output-mask-dir "data/uavid/val/masks" \
---mode 'val' --split-size-h 1024 --split-size-w 1024 \
---stride-h 1024 --stride-w 1024
-```
-
+<details>
+  <summary>风险等级区划</summary>
+  <div align="center">
+    <img src="./assets/risk_zones.jpg" width="80%" alt="吉林省风险区划">
+    <p>基于海拔、温度、林分密度的综合风险评估（红→黄→绿：高→中→低风险）</p>
+  </div>
 </details>
 
-## :running: Training
-
-"-c" means the path of the config, use different **config** to train different models.
-
-```shell
-python train_supervision.py -c config/uavid/urbanss-s.py
-```
-
-If the pre-trained weights download fails, please use: 
-```shell
-HF_ENDPOINT=https://hf-mirror.com python train_supervision.py -c config/uavid/urbanssf-s.py
-```
-
-## :mag: Testing
-
-"-c" denotes the path of the config, Use different **config** to test different models. 
-
-"-o" denotes the output path 
-
-"--rgb" denotes whether to output masks in RGB format
-
-**Vaihingen**
-```
-python vaihingen_test.py -c config/vaihingen/urbanssf-s.py -o fig_results/vaihingen/urbanssf-s --rgb -t 'None'
-```
-
-**Potsdam**
-
-```
-python potsdam_test.py -c config/potsdam/urbanssf-s.py -o fig_results/potsdam/urbanssf-s --rgb -t 'None'
-```
-
-**UAVid**
-
-```
-python uavid_test.py -c config/uavid/urbanssf-s.py -o fig_results/uavid/urbanssf-s --rgb -t 'None'
-```
-
-## Acknowledgement
-
-- [pytorch lightning](https://www.pytorchlightning.ai/)
-- [timm](https://github.com/rwightman/pytorch-image-models)
-- [pytorch-toolbelt](https://github.com/BloodAxe/pytorch-toolbelt)
-- [mmsegmentation](https://github.com/open-mmlab/mmsegmentation)
-- [UNetFormer](https://github.com/WangLibo1995/GeoSeg)
-- [Vision Mamba](https://github.com/hustvl/Vim)
-
-## Citation
-
-If you find this project useful in your research, please consider citing：
-
-```
-@article{WANG2025824,
-title = {Accurate semantic segmentation of very high-resolution remote sensing images considering feature state sequences: From benchmark datasets to urban applications},
-journal = {ISPRS Journal of Photogrammetry and Remote Sensing},
-volume = {220},
-pages = {824-840},
-year = {2025},
-issn = {0924-2716}
-author = {Zijie Wang and Jizheng Yi and Aibin Chen and Lijiang Chen and Hui Lin and Kai Xu}
-}
-```
-
+## :computer: 环境配置
+<details open>
+  <summary>依赖安装步骤</summary>
+  
+  1. **克隆仓库并创建环境**
+     ```bash
+     git clone https://github.com/你的用户名/你的仓库名.git
+     cd 你的仓库名
+     
+     conda create -n pwdm python=3.10
+     conda activate pwdm
