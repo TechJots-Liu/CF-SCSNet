@@ -1,7 +1,5 @@
 # Accurate segmentation of pine wilt disease in UAV remote sensing imagery: From dataset construction to vision-language segmentation framework with coarse-fine labels
 ![overview](static/surveyRegion.png)
-![overview](static/datasets.png)
-
 ## :evergreen_tree: Overview
 
 - **Research Background**：Pine wilt disease (PWD) is a major forest pest in Jilin Province, posing a severe threat to the pine forest ecosystems.  Traditional ground surveys are inefficient and limited in coverage, urgently requiring remote sensing technologies for large-scale dynamic monitoring.
@@ -10,7 +8,7 @@
   - Task-specific dataset with aligned cross-modal annotations
   - Coarse-fine dual-granularity labeling framework for imbalanced small targets
   - Text-driven semantically coupled segmentation network (CF-SCSNet)
-
+![overview](static/datasets.png)
 ## :bar_chart: 模型性能对比
 | **数据集**         | **方法**               | **准确率(%)↑** | **召回率(%)↑** | **F1-score↑** | 模型下载 |
 | :------------------ | :--------------------- | :------------- | :------------- | :------------ | :------- |
