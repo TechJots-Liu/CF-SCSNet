@@ -1,19 +1,15 @@
 # Accurate segmentation of pine wilt disease in UAV remote sensing imagery: From dataset construction to vision-language segmentation framework with coarse-fine labels
 ![overview](static/surveyRegion.png)
 ![overview](static/datasets.png)
-## :newspaper:R Research progress
-- **[2025/04/21]** 完成吉林省2024年松材线虫病遥感监测数据集构建，包含10万+样点数据 :chart_with_upwards_trend:
-- **[2025/XX/XX]** 提出基于多源遥感数据（哨兵-2、无人机LiDAR）的融合检测模型，F1-score达92.3% :star:
-- **[2024/XX/XX]** 项目启动，聚焦吉林省东部林区松材线虫病早期预警研究 :seedling:
 
-## :evergreen_tree: 研究概述
+## :evergreen_tree: Overview
 
-- **研究背景**：松材线虫病是吉林省林业重大病虫害，对长白山松树林生态系统构成严重威胁。传统地面调查效率低、覆盖范围有限，亟需遥感技术实现大范围动态监测。
-- **技术路线**：首次融合光学遥感（哨兵-2）、无人机高光谱与LiDAR数据，通过改进的U-Net++模型提取病木光谱-结构特征，并结合气象因子构建时空预测模型。
-- **核心创新**：
-  - 提出"病害胁迫指数（DSI）"量化松树健康状态
-  - 开发适用于寒区森林的抗干扰检测模块（针对吉林省冬季积雪、云雾干扰）
-  - 构建吉林省松材线虫病风险等级区划模型
+- **Research Background**：Pine wilt disease (PWD) is a major forest pest in Jilin Province, posing a severe threat to the pine forest ecosystems.  Traditional ground surveys are inefficient and limited in coverage, urgently requiring remote sensing technologies for large-scale dynamic monitoring.
+- **Technical route**：To the best of our knowledge, this study marks the first effort to integrate semantic, textural, and structural information from UAV-based visible remote sensing imagery with tailored textual semantic descriptions customized to the pathological characteristics of pine wilt disease—for monitoring pine wilt disease.  Through cross-modal collaborative semantic modeling, the approach enables precise monitoring of pine wilt disease in small-scale, high-interference scenarios for the first time.
+- **Core innovation**：
+  - Task-specific dataset with aligned cross-modal annotations
+  - Coarse-fine dual-granularity labeling framework for imbalanced small targets
+  - Text-driven semantically coupled segmentation network (CF-SCSNet)
 
 ## :bar_chart: 模型性能对比
 | **数据集**         | **方法**               | **准确率(%)↑** | **召回率(%)↑** | **F1-score↑** | 模型下载 |
