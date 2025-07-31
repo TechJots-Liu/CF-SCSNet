@@ -12,43 +12,24 @@
 ## :card_file_box:Datasets
 <div align="center">
     <img src="static/datasets.png" width="80%">
-    <p>左：2023年实测分布 | 右：本模型预测分布（红框为高风险区）</p>
 </div>
   
 ## :bar_chart: Model test dataset
 | **Dataset**         | Dataset download |
 | :------------------ | :--------------------- |
 | **self-built PWD** |  |
-| **public(FramSeg-M)** | [dataset](https://www.selectdataset.com/dataset/b6bd538e3e21259cf6958130ef5ed70a)   |
-| **public(FramSeg-L)** | [dataset](https://www.selectdataset.com/dataset/b6bd538e3e21259cf6958130ef5ed70a)   |
-| **public(RRSIS-M)** | [dataset](https://www.selectdataset.com/dataset/5bbd39a0d71020dd530930d9bb39eae7)   |
-| **public(RRSIS-L)** | [dataset](https://www.selectdataset.com/dataset/5bbd39a0d71020dd530930d9bb39eae7)   |
+| **Public generalization(FramSeg-M)** | [dataset](https://www.selectdataset.com/dataset/b6bd538e3e21259cf6958130ef5ed70a)   |
+| **Public generalization(FramSeg-L)** | [dataset](https://www.selectdataset.com/dataset/b6bd538e3e21259cf6958130ef5ed70a)   |
+| **Public generalization(RRSIS-M)** | [dataset](https://www.selectdataset.com/dataset/5bbd39a0d71020dd530930d9bb39eae7)   |
+| **Public generalization(RRSIS-L)** | [dataset](https://www.selectdataset.com/dataset/5bbd39a0d71020dd530930d9bb39eae7)   |
 
 ## :fallen_leaf: Visualization
 <details open>
   <summary>self-built PWD</summary>
   <div align="center">
     <img src="static/self-built PWD.png" width="80%">
-    <p>左：2023年实测分布 | 右：本模型预测分布（红框为高风险区）</p>
   </div>
 </details>
-
-<details>
-  <summary>Framseg</summary>
-  <div align="center">
-    <img src="static/Framseg.png" width="80%">
-    <p>左：2023年实测分布 | 右：本模型预测分布（红框为高风险区）</p>
-  </div>
-</details>
-
-<details>
-  <summary>RRSIS</summary>
-  <div align="center">
-    <img src="./assets/risk_zones.jpg" width="80%">
-    <p>基于海拔、温度、林分密度的综合风险评估（红→黄→绿：高→中→低风险）</p>
-  </div>
-</details>
-
 ## :computer: 环境配置
 <details open>
   <summary>依赖安装步骤</summary>
