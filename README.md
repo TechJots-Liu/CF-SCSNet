@@ -11,7 +11,7 @@
  
 ## :card_file_box:Datasets
 <div align="center">
-    <img src="static/datasets.png" width="80%">
+    <img src="static/dataset.png" width="80%">
 </div>
   
 ## :bar_chart: Model test dataset
