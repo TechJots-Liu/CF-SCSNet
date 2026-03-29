@@ -1,4 +1,4 @@
-# Pine Wilt Disease Monitoring: A Remote Sensing-Based Segmentation Framework
+# Accurate segmentation of pine wilt disease in UAV remote sensing imagery: From dataset construction to vision-language segmentation framework with coarse-fine dual-label supervision
 ![overview](statics/Overall.png)
 ## :evergreen_tree: Overview
 
